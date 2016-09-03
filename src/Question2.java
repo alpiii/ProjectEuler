@@ -15,20 +15,20 @@ the even-valued terms.
 public class Question2 {
 
 	public static void main(String[] args) {
-		
+
 		int result = evenFibonacci(4000000);
 		System.out.println("Result : " + result);
 	}
-	
+
 	public static int evenFibonacci(int max) {
-		
+
 		int sum = 0;
 		int first = 0;
 		int second = 1;
 		int temp = first + second;
-		while(temp<max) {
+		while (temp < max) {
 			temp = first + second;
-			if(temp % 2 == 0) {
+			if (temp % 2 == 0) {
 				sum += temp;
 			}
 			first = second;
