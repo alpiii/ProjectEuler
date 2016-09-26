@@ -1,3 +1,4 @@
+import EulerHelper.BigNumbers;
 
 /*
  * Sum square difference
