@@ -33,7 +33,7 @@ public class Question9 {
 				a = m * m - n * n;
 				b = 2 * m * n;
 				c = m * m + n * n;
-				// we know that sum of the triple numbers
+				// we know that sum of the triple numbers 
 				// are value of sum variable
 				if (a + b + c == sum) {
 					return new int[] { a, b, c };
