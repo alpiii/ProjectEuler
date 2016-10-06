@@ -98,4 +98,13 @@ public class BigNumbers {
 		}
 		return finalResult;
 	}
+
+	// valid for exponents greater than or equal to 0.
+	public static String bigPow(String num, int exponent) {
+		String result = "1";
+		for (int i = 0; i < exponent; i++) {
+			result = bigMul(result, num);
+		}
+		return result;
+	}
 }
