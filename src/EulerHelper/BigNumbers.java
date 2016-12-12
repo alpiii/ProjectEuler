@@ -107,4 +107,13 @@ public class BigNumbers {
 		}
 		return result;
 	}
+
+	public static String bigFactorial(int num) {
+		String result = "1";
+		while (num > 1) {
+			result = bigMul(result, String.valueOf(num));
+			num--;
+		}
+		return result;
+	}
 }
