@@ -1,5 +1,9 @@
 package EulerHelper;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class MultipliersDivisors {
 
 	private static int lcm(int a, int b) {
@@ -16,5 +20,29 @@ public class MultipliersDivisors {
 			result = lcm(nums[i], result);
 		}
 		return result;
+	}
+
+	public static List<Integer> divisorList(int num) {
+		List<Integer> divisors = new ArrayList<Integer>();
+		if (num <= 0)
+			return divisors;
+		else {
+			divisors.add(1);
+			if (num != 1)
+				divisors.add(num);
+			int div = 2;
+			while (div <= (num / 2)) {
+				if (num % div == 0) {
+					if (!divisors.contains(div))
+						divisors.add(div);
+					if (!divisors.contains(num / div))
+						divisors.add(num / div);
+					div++;
+				} else
+					div++;
+			}
+			Collections.sort(divisors);
+			return divisors;
+		}
 	}
 }
