@@ -6,7 +6,7 @@ public class BigNumbers {
 		int len = a.length() > b.length() ? a.length() - 1 : b.length() - 1;
 		int diff = Math.abs(a.length() - b.length());
 		int x, y, carry = 0;
-		String result = "";
+		StringBuilder result = new StringBuilder("");
 		while (len >= 0) {
 
 			if (a.length() < (a.length() >= b.length() ? len : len - diff)) {
@@ -35,67 +35,57 @@ public class BigNumbers {
 			}
 			carry = (x + y + carry);
 			if (carry >= 10) {
-				result = String.valueOf(carry % 10) + result;
+				result.insert(0, String.valueOf(carry % 10));
 				carry = carry / 10;
 			} else {
-				result = String.valueOf(carry) + result;
+				result.insert(0, String.valueOf(carry));
 				carry = 0;
 			}
 
 			len--;
 		}
 		if (carry != 0) {
-			result = String.valueOf(carry) + result;
+			result.insert(0, String.valueOf(carry));
 		}
 
-		try {
-			long r = Long.parseLong(result);
-			result = String.valueOf(r);
-		} catch (Exception ex) {
-		}
-		return result;
+		return result.toString();
 	}
 
 	public static String bigMul(String a, String b) {
 
 		String big = a.length() >= b.length() ? a : b;
 		String small = a.length() >= b.length() ? b : a;
-		String[] results = new String[small.length()];
+		StringBuilder[] results = new StringBuilder[small.length()];
 		int mul, carry = 0;
 		for (int j = small.length() - 1; j >= 0; j--) {
-			results[j] = "";
+			results[j] = new StringBuilder("");
 			if (small.length() - 1 > j) {
 				for (int z = 0; z < small.length() - 1 - j; z++) {
-					results[j] += "0";
+					results[j].append("0");
 				}
 			}
 			for (int i = big.length() - 1; i >= 0; i--) {
 				mul = Integer.parseInt(big.substring(i, i + 1)) * Integer.parseInt(small.substring(j, j + 1)) + carry;
 				if (mul >= 10) {
-					results[j] = String.valueOf(mul % 10) + results[j];
+					results[j].insert(0, String.valueOf(mul % 10));
 					carry = mul / 10;
 				} else {
-					results[j] = String.valueOf(mul) + results[j];
+					results[j].insert(0, String.valueOf(mul));
 					carry = 0;
 				}
 			}
 			if (carry != 0) {
-				results[j] = String.valueOf(carry) + results[j];
+				results[j].insert(0, String.valueOf(carry));
 				carry = 0;
 			}
 		}
 
 		String finalResult = "";
-		finalResult = results[0];
+		finalResult = results[0].toString();
 		for (int i = 1; i < results.length; i++) {
-			finalResult = bigSum(finalResult, results[i]);
+			finalResult = bigSum(finalResult, results[i].toString());
 		}
 
-		try {
-			long r = Long.parseLong(finalResult);
-			finalResult = String.valueOf(r);
-		} catch (Exception ex) {
-		}
 		return finalResult;
 	}
 
