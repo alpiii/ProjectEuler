@@ -26,6 +26,7 @@ public class Question31 {
 	}
 
 	private static void coinSum(int sum, int index) {
+
 		if (sum - coins[index] == 0) {
 			result += 1;
 		} else if (sum - coins[index] > 0) {
