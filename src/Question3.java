@@ -11,9 +11,11 @@ What is the largest prime factor of the number 600851475143 ?
 public class Question3 {
 
 	public static void main(String[] args) {
-
+		
+		final long start = System.nanoTime();
 		long result = largestPrimeFactor(600851475143L);
-		System.out.println("Result : " + result);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	public static long largestPrimeFactor(long num) {

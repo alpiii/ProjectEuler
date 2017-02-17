@@ -23,6 +23,8 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 public class Question14 {
 
 	public static void main(String[] args) {
+
+		final long start = System.nanoTime();
 		int maxLength = 0;
 		int currentLength;
 		long startNum = 999999;
@@ -35,7 +37,8 @@ public class Question14 {
 			}
 			startNum--;
 		}
-		System.out.println("Result : " + maxLengthNumber);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + maxLengthNumber);
 	}
 
 	private static int collatzSequenceLength(long startNum) {

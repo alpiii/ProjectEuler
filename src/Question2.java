@@ -16,8 +16,10 @@ public class Question2 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		int result = evenFibonacci(4000000);
-		System.out.println("Result : " + result);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	public static int evenFibonacci(int max) {

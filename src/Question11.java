@@ -37,6 +37,7 @@ public class Question11 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		String[] strNums = new String[20];
 		strNums[0] = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08";
 		strNums[1] = "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00";
@@ -67,7 +68,9 @@ public class Question11 {
 				nums[i][j] = Integer.valueOf(row[j]);
 			}
 		}
-		System.out.println("Result : " + largestProductGrid(nums));
+		int result = largestProductGrid(nums);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	public static int largestProductGrid(int[][] grid) {

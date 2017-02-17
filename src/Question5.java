@@ -16,8 +16,11 @@ import EulerHelper.MultipliersDivisors;
 public class Question5 {
 
 	public static void main(String[] args) {
-
-		System.out.println("Result : " + smallestMultiple(1, 20));
+		
+		final long start = System.nanoTime();
+		int result = smallestMultiple(1, 20);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	public static int smallestMultiple(int start, int end) {

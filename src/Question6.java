@@ -21,10 +21,13 @@ square of the sum.
 public class Question6 {
 
 	public static void main(String[] args) {
-
+		
+		final long start = System.nanoTime();
 		int squareOfSum = (int) Math.pow(sumOfNumbers(1, 100), 2);
 		int sumOfSquares = sumOfSquares(1, 100);
-		System.out.println("Result : " + (squareOfSum - sumOfSquares));
+		int result = squareOfSum - sumOfSquares;
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	public static int sumOfNumbers(int start, int end) {

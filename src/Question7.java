@@ -15,7 +15,10 @@ public class Question7 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Result : " + findPrime(10001));
+		final long start = System.nanoTime();
+		int result = findPrime(10001);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	public static int findPrime(int whichPrime) {

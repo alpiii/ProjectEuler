@@ -15,12 +15,17 @@ Find the product abc.
 public class Question9 {
 
 	public static void main(String[] args) {
+
+		final long start = System.nanoTime();
 		int[] triple = PythagoreanTriples(1000);
 		if (triple != null) {
 			System.out.println("Triple : " + triple[0] + ", " + triple[1] + ", " + triple[2]);
 			System.out.println("Result (a*b*c) : " + triple[0] * triple[1] * triple[2]);
+			final long end = System.nanoTime();
+			System.out.println("Took: " + ((end - start) / 1000000) + "ms.");
 		} else {
-			System.out.println("No triple found!");
+			final long end = System.nanoTime();
+			System.out.println("Took: " + ((end - start) / 1000000) + "ms. No triple found!");
 		}
 	}
 
@@ -33,7 +38,7 @@ public class Question9 {
 				a = m * m - n * n;
 				b = 2 * m * n;
 				c = m * m + n * n;
-				// we know that sum of the triple numbers 
+				// we know that sum of the triple numbers
 				// are value of sum variable
 				if (a + b + c == sum) {
 					return new int[] { a, b, c };

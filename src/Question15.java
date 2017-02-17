@@ -19,7 +19,10 @@ public class Question15 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Result : " + calc(0, 0, 20));
+		final long start = System.nanoTime();
+		long result = calc(0, 0, 20);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int calcGridSize(int x, int y, int gridSize) {

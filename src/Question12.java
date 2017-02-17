@@ -26,7 +26,11 @@ What is the value of the first triangle number to have over five hundred divisor
 public class Question12 {
 
 	public static void main(String[] args) {
-		System.out.println("Result : " + triangularNumber(500));
+
+		final long start = System.nanoTime();
+		int result = triangularNumber(500);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int triangularNumber(int maxDivisorCount) {

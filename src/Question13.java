@@ -4,7 +4,8 @@ import EulerHelper.BigNumbers;
 public class Question13 {
 
 	public static void main(String[] args) {
-
+		
+		final long start = System.nanoTime();
 		String strNum = "37107287533902102798797998220837590246510135740250\n"
 				+ "46376937677490009712648124896970078050417018260538\n"
 				+ "74324986199524741059474233309513058123726617309629\n"
@@ -107,7 +108,9 @@ public class Question13 {
 				+ "53503534226472524250874054075591789781264330331690";
 
 		String[] nums = strNum.split("\n");
-		System.out.println("Result : " + bigSumResult(nums).substring(0, 10));
+		String result = bigSumResult(nums).substring(0, 10);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static String bigSumResult(String[] nums) {
