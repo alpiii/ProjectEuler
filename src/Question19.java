@@ -23,6 +23,7 @@ public class Question19 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		int count = 0;
 		for (int y = 1901; y <= 2000; y++) {
 			for (int m = 1; m <= 12; m++) {
@@ -30,8 +31,8 @@ public class Question19 {
 					count++;
 			}
 		}
-
-		System.out.println("Result : " + count);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + count);
 	}
 
 	// Zeller's congruence algorithm

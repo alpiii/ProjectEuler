@@ -31,7 +31,10 @@ public class Question23 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Result : " + nonAbundantNumbers());
+		final long start = System.nanoTime();
+		int result = nonAbundantNumbers();
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int nonAbundantNumbers() {

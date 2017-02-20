@@ -21,7 +21,11 @@ import EulerHelper.NumberLetterCounts;
 public class Question17 {
 
 	public static void main(String[] args) {
-		System.out.println("Result : " + lettersOneToThousand());
+
+		final long start = System.nanoTime();
+		int result = lettersOneToThousand();
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int lettersOneToThousand() {

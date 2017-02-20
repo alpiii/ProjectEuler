@@ -20,9 +20,11 @@ public class Question31 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		for (int i = coins.length - 1; i >= 0; i--)
 			coinSum(200, i);
-		System.out.println("Result : " + result);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static void coinSum(int sum, int index) {

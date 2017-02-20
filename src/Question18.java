@@ -41,6 +41,8 @@ and requires a clever method! ;o)
 public class Question18 {
 
 	public static void main(String[] args) {
+
+		final long start = System.nanoTime();
 		String[] strNums = new String[15];
 
 		strNums[0] = "75";
@@ -67,10 +69,11 @@ public class Question18 {
 				nums[i][j] = Integer.valueOf(splitted[j]);
 			}
 		}
-
-		System.out.println("Result : " + calcMaxValue(nums));
+		int result = calcMaxValue(nums);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
-	
+
 	private static int calcMaxValue(int[][] nums) {
 		for (int i = 13; i >= 0; i--) {
 			for (int j = 0; j < i + 1; j++) {

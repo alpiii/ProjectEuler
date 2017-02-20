@@ -23,8 +23,10 @@ public class Question28 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		int result = 1 + numberSpiralDiagonals(1001, 3, 2, 1);
-		System.out.println("Result : " + result);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int numberSpiralDiagonals(int n, int nOrder, int inc, int num) {

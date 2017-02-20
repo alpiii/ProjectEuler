@@ -31,7 +31,10 @@ public class Question27 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Result : " + quadraticPrimes());
+		final long start = System.nanoTime();
+		int result = quadraticPrimes();
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int quadraticPrimes() {

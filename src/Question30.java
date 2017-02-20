@@ -21,6 +21,7 @@ public class Question30 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		int k;
 		int b;
 		int sumTemp;
@@ -39,6 +40,7 @@ public class Question30 {
 				sumResult += sumTemp;
 			}
 		}
-		System.out.println("Result : " + sumResult);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + sumResult);
 	}
 }

@@ -24,7 +24,10 @@ public class Question29 {
 
 	public static void main(String[] args) {
 
-		System.out.println("Result : " + distinctPowers(2, 100, 2, 100));
+		final long start = System.nanoTime();
+		int result = distinctPowers(2, 100, 2, 100);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int distinctPowers(int a, int b, int c, int d) {

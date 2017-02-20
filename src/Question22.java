@@ -25,8 +25,10 @@ public class Question22 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		int result = namesScores();
-		System.out.println("Result : " + result);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int namesScores() {

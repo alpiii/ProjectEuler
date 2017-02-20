@@ -24,6 +24,7 @@ public class Question21 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		final int maxNum = 10000;
 		List<Integer> amicableNumbers = new ArrayList<Integer>();
 		int divisorSum = 0;
@@ -31,21 +32,21 @@ public class Question21 {
 		List<Integer> divisors = null;
 		List<Integer> otherDivisors = null;
 		for (int i = 2; i < maxNum; i++) {
-			
+
 			// finding the divisors except itself
 			divisors = MultipliersDivisors.divisorList(i);
 			divisors.remove(divisors.indexOf(i));
-			
+
 			// calculating sum of divisors
 			divisorSum = sumOfDivisors(divisors);
-			
+
 			// finding the divisors of sum of divisor except itself
 			otherDivisors = MultipliersDivisors.divisorList(divisorSum);
 			otherDivisors.remove(otherDivisors.indexOf(divisorSum));
-			
+
 			// calculating sum of divisors
 			otherDivisorSum = sumOfDivisors(otherDivisors);
-			
+
 			if (i == otherDivisorSum && i != divisorSum) {
 				if (i < maxNum && divisorSum < maxNum) {
 					if (!amicableNumbers.contains(i))
@@ -55,8 +56,10 @@ public class Question21 {
 				}
 			}
 		}
+		int result = sumOfDivisors(amicableNumbers);
+		final long end = System.nanoTime();
 		System.out.println(amicableNumbers);
-		System.out.println("Result : " + sumOfDivisors(amicableNumbers));
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static int sumOfDivisors(List<Integer> divisors) {

@@ -14,11 +14,13 @@ public class Question16 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		String pow = BigNumbers.bigPow("2", 1000);
 		int sum = 0;
 		for (int i = 0; i < pow.length(); i++) {
 			sum += Integer.valueOf(pow.substring(i, i + 1));
 		}
-		System.out.println("Result : " + sum);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + sum);
 	}
 }

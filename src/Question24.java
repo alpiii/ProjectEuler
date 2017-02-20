@@ -22,12 +22,15 @@ public class Question24 {
 
 	public static void main(String[] args) {
 
+		final long start = System.nanoTime();
 		int whichSeq = 1000000;
 		char[] chArr = ("9876512340").toCharArray();
 		// sorting the numbers
 		Arrays.sort(chArr);
 		String chars = new String(chArr);
-		System.out.println("Result : " + lexicographicPermutation(chars, whichSeq));
+		String result = lexicographicPermutation(chars, whichSeq);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + result);
 	}
 
 	private static String lexicographicPermutation(String chars, int whichSeq) {

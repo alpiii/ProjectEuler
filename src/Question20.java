@@ -17,13 +17,16 @@ import EulerHelper.BigNumbers;
 public class Question20 {
 
 	public static void main(String[] args) {
+
+		final long start = System.nanoTime();
 		int i = 100;
 		String result = BigNumbers.bigFactorial(i);
 		int count = 0;
 		for (int j = 0; j < result.length(); j++) {
 			count += Integer.valueOf(result.substring(j, j + 1));
 		}
-		System.out.println("Result : " + count);
+		final long end = System.nanoTime();
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms. Result : " + count);
 	}
 
 }
