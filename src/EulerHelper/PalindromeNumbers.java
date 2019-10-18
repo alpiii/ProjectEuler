@@ -14,4 +14,17 @@ public class PalindromeNumbers {
 		else
 			return false;
 	}
+
+	public static boolean isPalindromeBigNumber(String num) {
+		String result = "";
+		String temp = num;
+		while (temp.length() > 0) {
+			result = BigNumbers.bigSum(result + "0", String.valueOf(temp.charAt(temp.length() - 1)));
+			temp = temp.substring(0, temp.length() - 1);
+		}
+		if (num.equals(result))
+			return true;
+		else
+			return false;
+	}
 }
